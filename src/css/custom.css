@@ -27,14 +27,14 @@
 
   /* Typography variables */
   --ifm-font-family-base: 'Inter', sans-serif; /* Modern sans-serif font */
-  --ifm-font-size-base: 17px; /* Slightly larger base font size */
-  --ifm-line-height-base: 1.7; /* Increased line height for better readability */
-  --ifm-h1-font-size: 3.2rem; /* Slightly larger headings */
-  --ifm-h2-font-size: 2.7rem;
-  --ifm-h3-font-size: 2.2rem;
-  --ifm-h4-font-size: 1.7rem;
-  --ifm-h5-font-size: 1.4rem;
-  --ifm-h6-font-size: 1.1rem;
+  --ifm-font-size-base: 16px; /* Standard base font size */
+  --ifm-line-height-base: 1.6; /* Standard line height for readability */
+  --ifm-h1-font-size: 3rem; /* Adjusted heading sizes */
+  --ifm-h2-font-size: 2.5rem;
+  --ifm-h3-font-size: 2rem;
+  --ifm-h4-font-size: 1.5rem;
+  --ifm-h5-font-size: 1.2rem;
+  --ifm-h6-font-size: 1rem;
 }
 
 /* For dark mode */
@@ -59,14 +59,14 @@ html[data-theme='dark'] {
 
   /* Typography variables (can be same as light mode or adjusted) */
   --ifm-font-family-base: 'Inter', sans-serif;
-  --ifm-font-size-base: 17px;
-  --ifm-line-height-base: 1.7;
-  --ifm-h1-font-size: 3.2rem;
-  --ifm-h2-font-size: 2.7rem;
-  --ifm-h3-font-size: 2.2rem;
-  --ifm-h4-font-size: 1.7rem;
-  --ifm-h5-font-size: 1.4rem;
-  --ifm-h6-font-size: 1.1rem;
+  --ifm-font-size-base: 16px;
+  --ifm-line-height-base: 1.6;
+  --ifm-h1-font-size: 3rem;
+  --ifm-h2-font-size: 2.5rem;
+  --ifm-h3-font-size: 2rem;
+  --ifm-h4-font-size: 1.5rem;
+  --ifm-h5-font-size: 1.2rem;
+  --ifm-h6-font-size: 1rem;
 }
 
 /* Enhanced navbar */
@@ -189,6 +189,19 @@ code {
 .alert ol,
 .alert li {
   color: var(--ifm-color-content) !important;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  :root {
+    --ifm-font-size-base: 15px;
+    --ifm-h1-font-size: 2.5rem;
+    --ifm-h2-font-size: 2rem;
+    --ifm-h3-font-size: 1.7rem;
+    --ifm-h4-font-size: 1.3rem;
+    --ifm-h5-font-size: 1.1rem;
+    --ifm-h6-font-size: 0.9rem;
+  }
 }
 
 /* Fix blockquotes */

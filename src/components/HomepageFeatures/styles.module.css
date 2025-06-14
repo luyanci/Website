@@ -37,7 +37,7 @@
   border: 1px solid var(--sukisu-border); /* Use custom border variable */
   border-radius: 15px; /* Even more rounded corners */
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
-  padding: 2.5rem; /* Even more padding */
+  padding: 1.5rem; /* Reduced padding for more compact cards */
   height: 100%;
   transition: all 0.3s ease; /* Smoother transition */
 }
@@ -45,4 +45,12 @@
 .featureCard:hover {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
   transform: translateY(-8px); /* More pronounced lift */
+}
+
+.featureCard h3 {
+  font-size: 1.5rem; /* Adjust heading size within card */
+}
+
+.featureCard p {
+  font-size: 1rem; /* Adjust paragraph size within card */
 }

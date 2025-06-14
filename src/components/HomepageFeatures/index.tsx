@@ -63,7 +63,7 @@ function Feature({title, description}: FeatureItem) {
   return (
     <div className={clsx('col col--4', styles.featureCard)}>
       <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
+        <Heading as="h4">{title}</Heading>
         <p>{description}</p>
       </div>
     </div>
