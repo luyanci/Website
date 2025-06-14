@@ -1,23 +1,48 @@
 .features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  align-items: stretch;
-  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  padding: 3rem 0; /* Increased padding */
   width: 100%;
 }
 
+.features .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the cards */
+  gap: 2.5rem; /* Increased gap between cards */
+}
+
+.features .col {
+  flex: 0 0 auto;
+  width: 30%; /* Adjust width for 3 cards per row */
+  max-width: 30%;
+}
+
+@media screen and (max-width: 996px) {
+  .features .col {
+    width: 48%; /* Two cards per row on medium screens, slightly wider */
+    max-width: 48%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .features .col {
+    width: 95%; /* One card per row on small screens, wider */
+    max-width: 95%;
+  }
+}
+
 .featureCard {
-  background: var(--ifm-card-background-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: var(--ifm-card-border-radius);
-  box-shadow: var(--ifm-global-shadow-lw);
-  padding: 1.5rem;
+  background: var(--ifm-background-surface-color); /* Use surface color */
+  border: 1px solid var(--sukisu-border); /* Use custom border variable */
+  border-radius: 15px; /* Even more rounded corners */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+  padding: 2.5rem; /* Even more padding */
   height: 100%;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease; /* Smoother transition */
 }
 
 .featureCard:hover {
-  box-shadow: var(--ifm-global-shadow-md);
-  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+  transform: translateY(-8px); /* More pronounced lift */
 }

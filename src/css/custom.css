@@ -6,178 +6,164 @@
 
 /* Light theme colors */
 :root {
-  --ifm-color-primary: #2563eb;
-  --ifm-color-primary-dark: #1d4ed8;
-  --ifm-color-primary-darker: #1e40af;
-  --ifm-color-primary-darkest: #1e3a8a;
-  --ifm-color-primary-light: #3b82f6;
-  --ifm-color-primary-lighter: #60a5fa;
-  --ifm-color-primary-lightest: #93c5fd;
+  --ifm-color-primary: #007bff;
+  --ifm-color-primary-dark: #0069d9;
+  --ifm-color-primary-darker: #0062cc;
+  --ifm-color-primary-darkest: #005cbf;
+  --ifm-color-primary-light: #268dff;
+  --ifm-color-primary-lighter: #4d9cff;
+  --ifm-color-primary-lightest: #73adff;
+  --ifm-background-color: #f8f9fa; /* Lighter background for a cleaner look */
+  --ifm-background-surface-color: #ffffff; /* White surface for cards/components */
+  --ifm-font-color-base: #212529; /* Darker text for improved readability */
+  --ifm-font-color-secondary: #495057; /* Slightly lighter secondary text */
+  --ifm-heading-color: #1a1d20; /* Even darker headings */
+  --ifm-link-color: var(--ifm-color-primary); /* Primary color for links */
+  --ifm-link-hover-color: var(--ifm-color-primary-dark);
+  --ifm-code-background-color: #e9ecef; /* Light code background */
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(37, 99, 235, 0.1);
-  
-  /* Fixed background and text colors for light mode */
-  --ifm-background-color: #ffffff;
-  --ifm-background-surface-color: #f8fafc;
-  --ifm-color-content: #1f2937;
-  --ifm-color-content-secondary: #6b7280;
-  
-  /* Override Docusaurus default font colors */
-  --ifm-font-color-base: #1f2937;
-  --ifm-font-color-secondary: #6b7280;
-  --ifm-heading-color: #1f2937;
-  --ifm-link-color: #2563eb;
-  --ifm-link-hover-color: #1d4ed8;
-  
-  /* Custom SukiSU variables */
-  --sukisu-gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-  --sukisu-shadow: 0 4px 20px rgba(37, 99, 235, 0.15);
-  --sukisu-border: #e5e7eb;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --sukisu-border: #dee2e6; /* Light border color */
+
+  /* Typography variables */
+  --ifm-font-family-base: 'Inter', sans-serif; /* Modern sans-serif font */
+  --ifm-font-size-base: 17px; /* Slightly larger base font size */
+  --ifm-line-height-base: 1.7; /* Increased line height for better readability */
+  --ifm-h1-font-size: 3.2rem; /* Slightly larger headings */
+  --ifm-h2-font-size: 2.7rem;
+  --ifm-h3-font-size: 2.2rem;
+  --ifm-h4-font-size: 1.7rem;
+  --ifm-h5-font-size: 1.4rem;
+  --ifm-h6-font-size: 1.1rem;
 }
 
-/* Dark theme colors */
-[data-theme='dark'] {
-  --ifm-color-primary: #60a5fa;
-  --ifm-color-primary-dark: #3b82f6;
-  --ifm-color-primary-darker: #2563eb;
-  --ifm-color-primary-darkest: #1d4ed8;
-  --ifm-color-primary-light: #93c5fd;
-  --ifm-color-primary-lighter: #bfdbfe;
-  --ifm-color-primary-lightest: #dbeafe;
-  --docusaurus-highlighted-code-line-bg: rgba(96, 165, 250, 0.1);
-  
-  /* Fixed background and text colors for dark mode */
-  --ifm-background-color: #0f172a;
-  --ifm-background-surface-color: #1e293b;
-  --ifm-color-content: #f1f5f9;
-  --ifm-color-content-secondary: #cbd5e1;
-  
-  /* Override Docusaurus default font colors for dark mode */
-  --ifm-font-color-base: #f1f5f9;
-  --ifm-font-color-secondary: #cbd5e1;
-  --ifm-heading-color: #f1f5f9;
-  --ifm-link-color: #60a5fa;
-  --ifm-link-hover-color: #93c5fd;
-  
-  --sukisu-gradient: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
-  --sukisu-shadow: 0 4px 20px rgba(96, 165, 250, 0.2);
-  --sukisu-border: #374151;
+/* For dark mode */
+html[data-theme='dark'] {
+  --ifm-color-primary: #61dafb;
+  --ifm-color-primary-dark: #45b3e0;
+  --ifm-color-primary-darker: #38a2cc;
+  --ifm-color-primary-darkest: #2a8bb8;
+  --ifm-color-primary-light: #7cdffc;
+  --ifm-color-primary-lighter: #98e5fd;
+  --ifm-color-primary-lightest: #b4ebfe;
+  --ifm-background-color: #212529; /* Darker background for a sleek look */
+  --ifm-background-surface-color: #2c3034; /* Darker surface for cards/components */
+  --ifm-font-color-base: #e9ecef; /* Lighter text for readability */
+  --ifm-font-color-secondary: #ced4da; /* Slightly darker secondary text */
+  --ifm-heading-color: #f8f9fa; /* White headings */
+  --ifm-link-color: var(--ifm-color-primary); /* Primary color for links */
+  --ifm-link-hover-color: var(--ifm-color-primary-light);
+  --ifm-code-background-color: #343a40; /* Dark code background */
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --sukisu-border: #495057; /* Dark border color */
+
+  /* Typography variables (can be same as light mode or adjusted) */
+  --ifm-font-family-base: 'Inter', sans-serif;
+  --ifm-font-size-base: 17px;
+  --ifm-line-height-base: 1.7;
+  --ifm-h1-font-size: 3.2rem;
+  --ifm-h2-font-size: 2.7rem;
+  --ifm-h3-font-size: 2.2rem;
+  --ifm-h4-font-size: 1.7rem;
+  --ifm-h5-font-size: 1.4rem;
+  --ifm-h6-font-size: 1.1rem;
 }
 
 /* Enhanced navbar */
+/* Enhanced navbar */
 .navbar {
-  background: var(--sukisu-gradient) !important;
-  box-shadow: var(--sukisu-shadow);
-  border-bottom: 1px solid var(--sukisu-border);
-}
-
-.navbar__title {
-  color: var(--ifm-color-content) !important;
-  font-weight: 800;
-  font-size: 1.25rem;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-.navbar__logo {
-  height: 32px;
-  width: 32px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* More pronounced shadow for depth */
 }
 
 .navbar__link {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: var(--ifm-font-color-base) !important; /* Ensure text is visible */
   font-weight: 500;
 }
 
 .navbar__link:hover {
-  color: white !important;
+  color: var(--ifm-color-primary) !important; /* Primary color on hover */
 }
 
-/* Beautiful buttons */
+.button {
+  border-radius: 10px; /* Even more rounded buttons */
+  font-weight: 600; /* Bolder text for buttons */
+  padding: 0.8rem 1.6rem; /* More padding */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
 .button--primary {
-  background: var(--sukisu-gradient) !important;
-  border: none !important;
-  color: white !important;
-  box-shadow: var(--sukisu-shadow);
-  transition: all 0.3s ease;
+  background-color: var(--ifm-color-primary);
+  color: white;
+  border: none; /* No border for primary button */
 }
 
 .button--primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(37, 99, 235, 0.25);
-  color: white !important;
+  background-color: var(--ifm-color-primary-dark);
+  transform: translateY(-2px); /* Slight lift on hover */
 }
 
 .button--secondary {
-  background: transparent !important;
-  border: 2px solid var(--ifm-color-primary) !important;
-  color: var(--ifm-color-primary) !important;
-  transition: all 0.3s ease;
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  border: 1px solid var(--sukisu-border);
 }
 
 .button--secondary:hover {
-  background: var(--ifm-color-primary) !important;
-  color: white !important;
-  transform: translateY(-2px);
+  background-color: var(--sukisu-border);
+  transform: translateY(-2px); /* Slight lift on hover */
 }
 
-/* Enhanced code blocks */
-.prism-code {
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  background: var(--ifm-background-surface-color) !important;
+.docusaurus-highlight-ed-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
 }
 
+html[data-theme='dark'] .docusaurus-highlight-ed-code-line {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Custom styles for code blocks */
 .theme-code-block {
-  border-radius: 12px;
-  border: 1px solid var(--sukisu-border);
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  background: var(--ifm-background-surface-color);
+  border-radius: 10px; /* More rounded corners for code blocks */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* More pronounced shadow */
 }
 
-/* Fix code block text colors */
-[data-theme='dark'] .prism-code {
-  background: #1e293b !important;
-}
-
-[data-theme='dark'] .theme-code-block {
-  background: #1e293b;
-  border-color: #374151;
-}
-
-/* Fix for inline code */
+/* Custom styles for inline code */
 code {
-  background: var(--ifm-background-surface-color) !important;
-  color: var(--ifm-color-primary-dark) !important;
-  border: 1px solid var(--sukisu-border);
-  padding: 2px 6px;
-  border-radius: 4px;
+  background-color: var(--ifm-code-background-color);
+  border-radius: 5px;
+  padding: 0.25em 0.5em;
+  font-size: 90%;
 }
 
-[data-theme='dark'] code {
-  background: rgba(96, 165, 250, 0.1) !important;
-  color: var(--ifm-color-primary-light) !important;
-  border-color: rgba(96, 165, 250, 0.2);
-}
-
-/* Beautiful admonitions */
+/* Custom styles for admonitions/alerts */
 .admonition {
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  border-left-width: 4px;
-  background: var(--ifm-background-surface-color);
-  border-color: var(--ifm-color-primary);
+  border-radius: 10px; /* More rounded corners for admonitions */
+  padding: 1.2rem 1.8rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
 }
 
-.admonition-heading {
-  font-weight: 700;
-  color: var(--ifm-color-content) !important;
+.admonition-note {
+  background-color: #e0f2f7; /* Lighter blue */
+  border-left-color: #03a9f4;
 }
 
-.admonition-content {
-  color: var(--ifm-color-content) !important;
+.admonition-tip {
+  background-color: #e8f5e9; /* Lighter green */
+  border-left-color: #43a047;
+}
+
+.admonition-info {
+  background-color: #fff8e1; /* Lighter orange */
+  border-left-color: #fb8c00;
+}
+
+.admonition-danger {
+  background-color: #ffebee; /* Lighter red */
+  border-left-color: #e53935;
 }
 
 .admonition-content p,
@@ -189,12 +175,13 @@ code {
 
 /* Enhanced alerts/admonitions */
 .alert {
-  border-radius: 12px;
-  border-left: 4px solid var(--ifm-color-primary);
+  border-radius: 10px; /* Slightly less rounded */
+  border-left: 5px solid var(--ifm-color-primary); /* Thicker left border */
   margin: 1.5rem 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05); /* Lighter shadow */
   background: var(--ifm-background-surface-color);
   color: var(--ifm-color-content) !important;
+  padding: 1.25rem; /* More padding */
 }
 
 .alert p,

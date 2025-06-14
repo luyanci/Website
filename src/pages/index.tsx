@@ -22,12 +22,12 @@ function HomepageHeader() {
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
-            className="button button--secondary button--lg"
+            className="button button--primary button--lg"
             to="/intro">
             Get Started
           </Link>
           <Link
-            className="button button--primary button--lg"
+            className="button button--secondary button--lg"
             to="https://t.me/SukiKSU">
             Telegram Help Group
           </Link>

@@ -82,7 +82,7 @@ const config: Config = {
       ],
     },
     footer: {
-      style: 'dark',
+      style: 'light', /* Changed to light style for a cleaner look */
       links: [
         {
           title: 'Documentation',

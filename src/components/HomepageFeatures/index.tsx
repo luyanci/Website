@@ -61,7 +61,7 @@ const FeatureList: FeatureItem[] = [
 
 function Feature({title, description}: FeatureItem) {
   return (
-    <div className={styles.featureCard}>
+    <div className={clsx('col col--4', styles.featureCard)}>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
         <p>{description}</p>
@@ -74,7 +74,7 @@ export default function HomepageFeatures(): ReactNode {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className={styles.features}>
+        <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
