@@ -466,7 +466,7 @@ p, ul, ol, li, span, div {
 
 .menu__list-item .menu__link--active {
   background: var(--sukisu-gradient) !important;
-  color: white !important;
+  color: var(--ifm-color-content) !important;
   box-shadow: var(--sukisu-shadow);
 }
 
