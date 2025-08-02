@@ -10,18 +10,18 @@ sidebar_position: 2
 
 Please **all** refer to https://kernelsu.org/zh_CN/guide/installation.html
 
-:::note
+:::info
 1. for devices with GKI 2.0 such as Xiaomi, Redmi, Samsung, etc. (excludes kernel-modified manufacturers such as Meizu, OnePlus, Zenith, and oppo)
-2. Find the GKI build in [more links](/links). Find the device kernel version. Then download it and use TWRP or kernel flashing tool to flash the zip file with AnyKernel3 suffix.
-3. The .zip archive without suffix is uncompressed, the gz suffix is the compression used by Tenguet models.
+2. Find the GKI build in [more links](/links). Find the device kernel version. Then download it and use TWRP or kernel flashing tool to flash the zip file with `AnyKernel3` suffix.
+3. The `.zip` archive without suffix is uncompressed, the `gz` suffix is the compression used by Tenguet models.
 :::
 
 ### OnePlus
 
 1. Use the link mentioned in the 'More Links' section to create a customized build with your device information, and then flash the zip file with the AnyKernel3 suffix.
 
-:::note
-- You only need to fill in the first two parts of kernel versions, such as 5.10, 5.15, 6.1, or 6.6.
+:::tip
+- You only need to fill in the first two parts of kernel versions, such as `5.10`, `5.15`, `6.1`, or `6.6`.
 - Please search for the processor codename by yourself, usually it is all English without numbers.
 - You can find the branch and configuration files from the OnePlus open-source kernel repository.
 - Custom recovery (TWRP recommended)

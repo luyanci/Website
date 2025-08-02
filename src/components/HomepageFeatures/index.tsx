@@ -6,11 +6,13 @@ import styles from './styles.module.css';
 type FeatureItem = {
   title: string;
   description: ReactNode;
+  image: string;
 };
 
 const FeatureList: FeatureItem[] = [
   {
     title: 'Kernel-based su and root access management',
+    image: '/svg/feature1.svg',
     description: (
       <>
         Secure root access management at the kernel level.
@@ -19,6 +21,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Not based on OverlayFS module system',
+    image: '/svg/feature2.svg',
     description: (
       <>
         Based on Magic Mount from 5ec1cff.
@@ -27,6 +30,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'App Profile',
+    image: '/svg/feature3.svg',
     description: (
       <>
         Lock root privileges in a cage.
@@ -35,6 +39,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Bringing back non-GKI/GKI 1.0 support',
+    image: '/svg/feature4.svg',
     description: (
       <>
         Enhanced compatibility for older devices.
@@ -43,6 +48,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'More customization',
+    image: '/svg/feature5.svg',
     description: (
       <>
         Extensive customization options available.
@@ -51,6 +57,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Support for KPM kernel modules',
+    image: '/svg/feature6.svg',
     description: (
       <>
         Full KernelPatch Module functionality.
@@ -59,13 +66,12 @@ const FeatureList: FeatureItem[] = [
   },
 ];
 
-function Feature({title, description}: FeatureItem) {
+function Feature({title, description, image}: FeatureItem) {
   return (
-    <div className={clsx('col col--4', styles.featureCard)}>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h4">{title}</Heading>
-        <p>{description}</p>
-      </div>
+    <div className={clsx('col col--4', styles.featureCard, 'text--center')}>
+      <img src={image} alt={title} className={styles.featureImage} />
+      <Heading as="h4">{title}</Heading>
+      <p>{description}</p>
     </div>
   );
 }

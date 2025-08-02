@@ -17,12 +17,12 @@
   font-size: 3.8rem; /* Slightly larger heading */
   font-weight: 700;
   margin-bottom: 1.2rem;
-  color: var(--ifm-heading-color); /* Use theme heading color */
+  color: var(--ifm-color-primary);
 }
 
 .heroBanner p {
   font-size: 1.3rem; /* Slightly larger tagline */
-  color: var(--ifm-font-color-secondary); /* Use theme secondary font color */
+  color: #000;
   max-width: 800px;
   margin: 0 auto 2.5rem auto; /* More space below tagline */
 }

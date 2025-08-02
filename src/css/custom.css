@@ -113,30 +113,30 @@ html[data-theme='dark'] {
   transform: translateY(-2px); /* Slight lift on hover */
 }
 
-.docusaurus-highlight-ed-code-line {
-  background-color: rgba(0, 0, 0, 0.1);
-  display: block;
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  padding: 0 var(--ifm-pre-padding);
-}
+/*.docusaurus-highlight-ed-code-line {*/
+/*  background-color: rgba(0, 0, 0, 0.1);*/
+/*  display: block;*/
+/*  margin: 0 calc(-1 * var(--ifm-pre-padding));*/
+/*  padding: 0 var(--ifm-pre-padding);*/
+/*}*/
 
-html[data-theme='dark'] .docusaurus-highlight-ed-code-line {
-  background-color: rgba(0, 0, 0, 0.3);
-}
+/*html[data-theme='dark'] .docusaurus-highlight-ed-code-line {*/
+/*  background-color: rgba(0, 0, 0, 0.3);*/
+/*}*/
 
-/* Custom styles for code blocks */
-.theme-code-block {
-  border-radius: 10px; /* More rounded corners for code blocks */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* More pronounced shadow */
-}
+/*!* Custom styles for code blocks *!*/
+/*.theme-code-block {*/
+/*  border-radius: 10px; !* More rounded corners for code blocks *!*/
+/*  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); !* More pronounced shadow *!*/
+/*}*/
 
-/* Custom styles for inline code */
-code {
-  background-color: var(--ifm-code-background-color);
-  border-radius: 5px;
-  padding: 0.25em 0.5em;
-  font-size: 90%;
-}
+/*!* Custom styles for inline code *!*/
+/*code {*/
+/*  background-color: var(--ifm-code-background-color);*/
+/*  border-radius: 5px;*/
+/*  padding: 0.25em 0.5em;*/
+/*  font-size: 90%;*/
+/*}*/
 
 /* Custom styles for admonitions/alerts */
 .admonition {
@@ -173,16 +173,16 @@ code {
   color: var(--ifm-color-content) !important;
 }
 
-/* Enhanced alerts/admonitions */
-.alert {
-  border-radius: 10px; /* Slightly less rounded */
-  border-left: 5px solid var(--ifm-color-primary); /* Thicker left border */
-  margin: 1.5rem 0;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05); /* Lighter shadow */
-  background: var(--ifm-background-surface-color);
-  color: var(--ifm-color-content) !important;
-  padding: 1.25rem; /* More padding */
-}
+/*!* Enhanced alerts/admonitions *!*/
+/*.alert {*/
+/*  border-radius: 10px; !* Slightly less rounded *!*/
+/*  border-left: 5px solid var(--ifm-color-primary); !* Thicker left border *!*/
+/*  margin: 1.5rem 0;*/
+/*  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05); !* Lighter shadow *!*/
+/*  background: var(--ifm-background-surface-color);*/
+/*  color: var(--ifm-color-content) !important;*/
+/*  padding: 1.25rem; !* More padding *!*/
+/*}*/
 
 .alert p,
 .alert ul,
@@ -214,23 +214,23 @@ blockquote {
   border-radius: 0 8px 8px 0;
 }
 
-/* Gradient hero sections */
-.hero {
-  background: var(--sukisu-gradient) !important;
-  color: white !important;
-}
+/*!* Gradient hero sections *!*/
+/*.hero {*/
+/*  background: var(--sukisu-gradient) !important;*/
+/*  color: white !important;*/
+/*}*/
 
-.hero__title {
-  color: white !important;
-  font-weight: 900;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+/*.hero__title {*/
+/*  color: white !important;*/
+/*  font-weight: 900;*/
+/*  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
+/*}*/
 
-.hero__subtitle {
-  color: rgba(255, 255, 255, 0.9) !important;
-  font-size: 1.2rem;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
+/*.hero__subtitle {*/
+/*  color: rgba(255, 255, 255, 0.9) !important;*/
+/*  font-size: 1.2rem;*/
+/*  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);*/
+/*}*/
 
 /* Enhanced tables */
 table {
@@ -265,7 +265,7 @@ tbody td {
 /* Content area fixes */
 .main-wrapper {
   max-width: none !important;
-  background: var(--ifm-background-color) !important;  
+  background: var(--ifm-background-color) !important;
 }
 
 .container-fluid, .container {
@@ -304,25 +304,25 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--ifm-color-content) !important;
 }
 
-.markdown > h1,
-h1 {
-  color: var(--ifm-color-primary) !important;
-  border-bottom: 3px solid var(--ifm-color-primary-lighter);
-  padding-bottom: 0.5rem;
-  font-weight: 800;
-}
+/*.markdown > h1,*/
+/*h1 {*/
+/*  color: var(--ifm-color-primary) !important;*/
+/*  border-bottom: 3px solid var(--ifm-color-primary-lighter);*/
+/*  padding-bottom: 0.5rem;*/
+/*  font-weight: 800;*/
+/*}*/
 
-.markdown > h2,
-h2 {
-  color: var(--ifm-color-primary-dark) !important;
-  font-weight: 700;
-}
+/*.markdown > h2,*/
+/*h2 {*/
+/*  color: var(--ifm-color-primary-dark) !important;*/
+/*  font-weight: 700;*/
+/*}*/
 
-.markdown > h3,
-h3 {
-  color: var(--ifm-color-content) !important;
-  font-weight: 600;
-}
+/*.markdown > h3,*/
+/*h3 {*/
+/*  color: var(--ifm-color-content) !important;*/
+/*  font-weight: 600;*/
+/*}*/
 
 .markdown > p,
 .markdown > ul,
@@ -413,24 +413,24 @@ p, ul, ol, li, span, div {
   border-color: rgba(255, 255, 255, 0.4) !important;
 }
 
-/* Hide table of contents (right sidebar) */
-.table-of-contents {
-  display: none !important;
-}
+/*!* Hide table of contents (right sidebar) *!*/
+/*.table-of-contents {*/
+/*  display: none !important;*/
+/*}*/
 
-.theme-doc-toc-desktop {
-  display: none !important;
-}
+/*.theme-doc-toc-desktop {*/
+/*  display: none !important;*/
+/*}*/
 
-.col--3 {
-  display: none !important;
-}
+/*.col--3 {*/
+/*  display: none !important;*/
+/*}*/
 
-/* Improve main content layout without TOC */
-.container .row .col:not(.col--3) {
-  max-width: 100% !important;
-  flex: 1 1 100% !important;
-}
+/*!* Improve main content layout without TOC *!*/
+/*.container .row .col:not(.col--3) {*/
+/*  max-width: 100% !important;*/
+/*  flex: 1 1 100% !important;*/
+/*}*/
 
 /* Enhanced sidebar styling */
 .theme-doc-sidebar-container {
@@ -553,11 +553,11 @@ p, ul, ol, li, span, div {
   .navbar__title {
     font-size: 1.1rem;
   }
-  
+
   .hero__title {
     font-size: 2rem;
   }
-  
+
   .container {
     padding: 0 1rem;
   }
@@ -568,12 +568,12 @@ p, ul, ol, li, span, div {
     height: 80px;
     width: 80px;
   }
-  
+
   .buttons {
     flex-direction: column;
     gap: 0.5rem;
   }
-  
+
   .button {
     width: 100%;
     max-width: 300px;
@@ -590,10 +590,10 @@ body {
   background: var(--ifm-background-color) !important;
 }
 
-/* Force all text elements to use proper colors */
-*:not(.navbar):not(.navbar *):not(.hero):not(.hero *):not(.menu__link--active):not(.button--primary):not(code) {
-  color: var(--ifm-color-content) !important;
-}
+/*!* Force all text elements to use proper colors *!*/
+/**:not(.navbar):not(.navbar *):not(.hero):not(.hero *):not(.menu__link--active):not(.button--primary):not(code) {*/
+/*  color: var(--ifm-color-content) !important;*/
+/*}*/
 
 /* Main content wrapper */
 .main-wrapper main {
@@ -626,14 +626,14 @@ h2 {
   color: var(--ifm-color-primary-dark) !important;
 }
 
-/* Links */
-a:not(.navbar__link):not(.button):not(.menu__link) {
-  color: var(--ifm-color-primary) !important;
-}
+/*!* Links *!*/
+/*a:not(.navbar__link):not(.button):not(.menu__link) {*/
+/*  color: var(--ifm-color-primary) !important;*/
+/*}*/
 
-a:not(.navbar__link):not(.button):not(.menu__link):hover {
-  color: var(--ifm-color-primary-dark) !important;
-}
+/*a:not(.navbar__link):not(.button):not(.menu__link):hover {*/
+/*  color: var(--ifm-color-primary-dark) !important;*/
+/*}*/
 
 /* Docusaurus specific classes */
 .theme-doc-markdown,
@@ -642,13 +642,13 @@ a:not(.navbar__link):not(.button):not(.menu__link):hover {
   color: var(--ifm-color-content) !important;
 }
 
-.theme-doc-markdown h1 {
-  color: var(--ifm-color-primary) !important;
-}
+/*.theme-doc-markdown h1 {*/
+/*  color: var(--ifm-color-primary) !important;*/
+/*}*/
 
-.theme-doc-markdown h2 {
-  color: var(--ifm-color-primary-dark) !important;
-}
+/*.theme-doc-markdown h2 {*/
+/*  color: var(--ifm-color-primary-dark) !important;*/
+/*}*/
 
 .theme-doc-markdown a {
   color: var(--ifm-color-primary) !important;
@@ -700,19 +700,19 @@ ul li, ol li {
   color: #f1f5f9 !important;
 }
 
-/* Force white text override */
-[data-theme='light'] * {
-  color: #1f2937 !important;
-}
+/*!* Force white text override *!*/
+/*[data-theme='light'] * {*/
+/*  color: #1f2937 !important;*/
+/*}*/
 
-[data-theme='light'] h1 {
-  color: var(--ifm-color-primary) !important;
-}
+/*[data-theme='light'] h1 {*/
+/*  color: var(--ifm-color-primary) !important;*/
+/*}*/
 
-[data-theme='light'] h2 {
-  color: var(--ifm-color-primary-dark) !important;
-}
+/*[data-theme='light'] h2 {*/
+/*  color: var(--ifm-color-primary-dark) !important;*/
+/*}*/
 
-[data-theme='light'] a:not(.navbar__link):not(.button):not(.menu__link) {
-  color: var(--ifm-color-primary) !important;
-}
+/*[data-theme='light'] a:not(.navbar__link):not(.button):not(.menu__link) {*/
+/*  color: var(--ifm-color-primary) !important;*/
+/*}*/
