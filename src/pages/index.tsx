@@ -14,7 +14,7 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <div className={styles.heroLogo}>
-          <img src="/img/logo.png" alt="SukiSU Ultra Logo" className={styles.logoImage} />
+          <img src="/img/logo.svg" alt="SukiSU Ultra Logo" className={styles.logoImage} />
         </div>
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
