@@ -1,0 +1,38 @@
+{
+  "name": "sukisu-ultra-docs",
+  "version": "1.0.0",
+  "description": "SukiSU-Ultra Documentation - Next-Generation Android Root Solution",
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev docs --host",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "docs:build-and-preview": "pnpm run docs:build && pnpm run docs:preview",
+    "lint": "echo 'No linting configured'",
+    "type-check": "echo 'No type checking configured'"
+  },
+  "keywords": [
+    "android",
+    "root",
+    "kernelsu",
+    "sukisu",
+    "documentation",
+    "vitepress"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sukisu-ultra/sukisu-ultra.git"
+  },
+  "homepage": "https://sukisu.org",
+  "bugs": {
+    "url": "https://github.com/sukisu-ultra/sukisu-ultra/issues"
+  },
+  "devDependencies": {
+    "vitepress": "^2.0.0-alpha.9"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@10.14.0"
+}
