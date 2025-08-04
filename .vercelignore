@@ -1,0 +1,39 @@
+# Optimized for Vercel Hobby Plan
+node_modules/
+.env*
+!.env.example
+.DS_Store
+*.log
+
+# Build artifacts
+.vitepress/cache/
+.vitepress/temp/
+
+
+# Development files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Git and GitHub
+.git/
+.gitignore
+.github/
+
+# Package manager
+.pnpm-store/
+.npmrc
+
+# Testing
+coverage/
+test/
+tests/
+**/*.test.*
+**/*.spec.*
+
+# Scripts (not needed for build)
+scripts/
+
+# Cloudflare config (not needed)
+wrangler.toml
