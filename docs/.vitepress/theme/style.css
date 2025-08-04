@@ -1,3 +1,5 @@
+/* Critical CSS only - minimize unused styles */
+
 :root:where(:lang(fa)) {
   --vp-font-family-base:
     'Vazirmatn', 'Inter', ui-sans-serif, system-ui, sans-serif,
@@ -5,6 +7,7 @@
 }
 
 :root {
+  /* Hero styles */
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: -webkit-linear-gradient(
     120deg,
@@ -48,6 +51,7 @@
   --vp-button-brand-active-text: #000000;
 }
 
+/* Responsive hero image filters */
 @media (min-width: 640px) {
   :root {
     --vp-home-hero-image-filter: blur(56px);
@@ -60,15 +64,10 @@
   }
 }
 
+/* Hero image styling */
 .VPHero .VPImage {
   filter: drop-shadow(-2px 4px 6px rgba(0, 0, 0, 0.2));
   padding: 18px;
-}
-
-/* used in reference/default-theme-search */
-img[src='/search.png'] {
-  width: 100%;
-  aspect-ratio: 1 / 1;
 }
 
 /* Enhanced button contrast for accessibility */
@@ -124,4 +123,36 @@ img[src='/search.png'] {
 .dark .VPButton.brand:focus-visible {
   outline: 2px solid #000000;
   outline-offset: 2px;
+}
+
+/* Hide unused VitePress components to reduce CSS footprint */
+.VPSponsor,
+.VPTeamMembers,
+.VPLastUpdated,
+.VPDocFooter,
+.VPSidebar .has-sidebar,
+.VPAlgoliaSearchBox,
+.VPCarbonAds {
+  display: none !important;
+}
+
+/* Optimize typography - only include what we use */
+.VPDoc h1, .VPDoc h2, .VPDoc h3, .VPDoc h4, .VPDoc h5, .VPDoc h6 {
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* Minimize search styles if not actively used */
+.search-box,
+.algolia-search,
+.DocSearch {
+  display: var(--search-display, block);
+}
+
+/* Reduce feature-specific CSS that might not be used */
+.custom-block,
+.badge,
+.medium-zoom-overlay,
+.medium-zoom-image {
+  display: var(--feature-display, block);
 }
