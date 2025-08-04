@@ -64,8 +64,8 @@ self.addEventListener('fetch', event => {
   // Skip non-GET requests and cross-origin
   if (request.method !== 'GET' || url.origin !== location.origin) return
 
-  // Skip Vercel analytics to prevent interference
-  if (url.pathname.startsWith('/_vercel/') || url.pathname.startsWith('/api/')) return
+  // Skip API requests to prevent interference
+  if (url.pathname.startsWith('/api/')) return
 
   event.respondWith(handleRequest(request, url))
 })
@@ -185,20 +185,20 @@ async function handleOffline(request) {
   })
 }
 
-// Background sync for analytics (global performance tracking)
+// Background sync for data (global performance tracking)
 self.addEventListener('sync', event => {
-  if (event.tag === 'analytics-sync') {
-    event.waitUntil(syncAnalytics())
+  if (event.tag === 'data-sync') {
+    event.waitUntil(syncData())
   }
 })
 
-async function syncAnalytics() {
+async function syncData() {
   try {
-    // Batch analytics data for efficiency
-    console.log('Syncing global analytics...')
-    // Implementation depends on your analytics provider
+    // Batch data for efficiency
+    console.log('Syncing application data...')
+    // Implementation depends on your data provider
   } catch (error) {
-    console.error('Analytics sync failed:', error)
+    console.error('Data sync failed:', error)
   }
 }
 

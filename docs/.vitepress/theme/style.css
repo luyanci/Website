@@ -17,6 +17,35 @@
     #47caff 50%
   );
   --vp-home-hero-image-filter: blur(44px);
+  
+  /* Enhanced brand color for better contrast */
+  --vp-c-brand-1: #1e40af;
+  --vp-c-brand-2: #2563eb;
+  --vp-c-brand-3: #3b82f6;
+  --vp-c-brand-soft: rgba(30, 64, 175, 0.14);
+  
+  /* Button contrast improvements */
+  --vp-button-brand-bg: #1e40af;
+  --vp-button-brand-text: #ffffff;
+  --vp-button-brand-hover-bg: #1d4ed8;
+  --vp-button-brand-hover-text: #ffffff;
+  --vp-button-brand-active-bg: #1e3a8a;
+  --vp-button-brand-active-text: #ffffff;
+}
+
+/* Dark mode color overrides for better contrast */
+.dark:root {
+  --vp-c-brand-1: #60a5fa;
+  --vp-c-brand-2: #3b82f6;
+  --vp-c-brand-3: #2563eb;
+  --vp-c-brand-soft: rgba(96, 165, 250, 0.16);
+  
+  --vp-button-brand-bg: #3b82f6;
+  --vp-button-brand-text: #000000;
+  --vp-button-brand-hover-bg: #60a5fa;
+  --vp-button-brand-hover-text: #000000;
+  --vp-button-brand-active-bg: #2563eb;
+  --vp-button-brand-active-text: #000000;
 }
 
 @media (min-width: 640px) {
@@ -40,4 +69,59 @@
 img[src='/search.png'] {
   width: 100%;
   aspect-ratio: 1 / 1;
+}
+
+/* Enhanced button contrast for accessibility */
+.VPButton.brand {
+  background-color: var(--vp-button-brand-bg) !important;
+  color: var(--vp-button-brand-text) !important;
+  border: none;
+  font-weight: 600;
+  text-shadow: none;
+}
+
+.VPButton.brand:hover {
+  background-color: var(--vp-button-brand-hover-bg) !important;
+  color: var(--vp-button-brand-hover-text) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.4);
+}
+
+.VPButton.brand:active {
+  background-color: var(--vp-button-brand-active-bg) !important;
+  color: var(--vp-button-brand-active-text) !important;
+  transform: translateY(0);
+}
+
+/* Dark mode support for buttons */
+.dark .VPButton.brand {
+  background-color: #3b82f6 !important;
+  color: #000000 !important;
+}
+
+.dark .VPButton.brand:hover {
+  background-color: #60a5fa !important;
+  color: #000000 !important;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.dark .VPButton.brand:active {
+  background-color: #2563eb !important;
+  color: #000000 !important;
+}
+
+/* Ensure proper contrast for all text elements */
+.VPButton.brand .text {
+  color: inherit !important;
+}
+
+/* Focus states for accessibility */
+.VPButton.brand:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.dark .VPButton.brand:focus-visible {
+  outline: 2px solid #000000;
+  outline-offset: 2px;
 }

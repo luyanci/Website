@@ -5,8 +5,6 @@ import {
 } from 'vitepress'
 import { resolve } from 'path'
 
-const prod = !!process.env.VERCEL
-
 export default defineConfig({
   title: 'SukiSU-Ultra',
   description: 'Next-Generation Android Root Solution - Advanced kernel-based root management for Android devices with KernelSU integration',
@@ -120,10 +118,6 @@ export default defineConfig({
     ['meta', { name: 'googlebot', content: 'index, follow' }],
     ['meta', { name: 'bingbot', content: 'index, follow' }],
     ['meta', { name: 'referrer', content: 'strict-origin-when-cross-origin' }],
-    
-    // Vercel Analytics (global performance tracking)
-    ['script', { src: '/_vercel/insights/script.js', defer: '' }],
-    ['script', { src: '/_vercel/speed-insights/script.js', defer: '' }],
     
     // Global SEO optimization
     ['meta', { name: 'keywords', content: 'Android root, KernelSU, SukiSU-Ultra, Android kernel, root management, 安卓 root, カーネル, рут' }],

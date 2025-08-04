@@ -3,7 +3,6 @@ Allow: /
 Disallow: /admin/
 Disallow: /.git/
 Disallow: /node_modules/
-Disallow: /_vercel/
 Disallow: /api/
 Disallow: /.vitepress/
 
