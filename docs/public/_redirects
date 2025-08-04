@@ -1,5 +1,0 @@
-# Redirect old docs URLs to new structure
-/docs/* /:splat 301
-
-# SPA fallback - serve 404.html for missing pages
-/* /404.html 200
