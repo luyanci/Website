@@ -161,7 +161,14 @@ export default defineConfig({
     ['link', { rel: 'manifest', href: '/site.webmanifest' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' }],
-    ['meta', { name: 'apple-mobile-web-app-title', content: 'SukiSU-Ultra' }]
+    ['meta', { name: 'apple-mobile-web-app-title', content: 'SukiSU-Ultra' }],
+    
+    // Cloudflare Web Analytics
+    ['script', { 
+      defer: '', 
+      src: 'https://static.cloudflareinsights.com/beacon.min.js',
+      'data-cf-beacon': '{"token": "dcc5feef58bf4c56a170a99f4cec4798"}'
+    }]
   ],
 
   themeConfig: {
