@@ -68,15 +68,6 @@ export default defineConfig({
     ['link', { rel: 'dns-prefetch', href: '//t.me' }],
     ['link', { rel: 'dns-prefetch', href: '//sukisu.org' }],
     
-    // Critical CSS optimization
-    ['link', { rel: 'preload', href: '/logo.svg', as: 'image' }],
-    ['style', {}, `
-      /* Critical above-the-fold CSS */
-      .VPButton.brand{background:#1e40af!important;color:#fff!important;font-weight:600}
-      .VPHero .VPImage{filter:drop-shadow(-2px 4px 6px rgba(0,0,0,.2));padding:18px}
-      :root{--vp-c-brand-1:#1e40af;--vp-c-brand-2:#2563eb;--vp-c-brand-3:#3b82f6}
-    `],
-    
     // Essential favicon setup - optimized for performance
     ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
@@ -249,19 +240,7 @@ export default defineConfig({
       assetsInlineLimit: 8192,
       target: 'esnext',
       cssCodeSplit: true,
-      sourcemap: false,
-      rollupOptions: {
-        output: {
-          // Optimize asset file names for better caching
-          assetFileNames: (assetInfo) => {
-            if (!assetInfo.name) return 'assets/[name].[hash][extname]'
-            if (/\.(css)$/.test(assetInfo.name)) {
-              return `assets/styles/[name].[hash][extname]`
-            }
-            return `assets/[name].[hash][extname]`
-          }
-        }
-      }
+      sourcemap: false
     },
     
     server: {

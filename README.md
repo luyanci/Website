@@ -9,4 +9,3 @@
 ##  Visit the Documentation
 
 **Live Site:** [https://sukisu.org](https://sukisu.org)
-### if you like our work and site so you can star our repository it will give us motivation to make it more better

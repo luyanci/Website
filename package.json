@@ -7,14 +7,12 @@
     "docs:dev": "vitepress dev docs --host",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
-    "build": "vitepress build docs && node scripts/optimize-css.js",
-    "build:fast": "vitepress build docs",
+    "build": "vitepress build docs",
     "dev": "vitepress dev docs --host",
     "preview": "vitepress preview docs",
     "generate:favicons": "node scripts/generate-favicons.js",
     "clean:favicons": "node scripts/clean-favicons.js",
     "build:all": "pnpm generate:favicons && pnpm build",
-    "optimize:css": "node scripts/optimize-css.js",
     "cf:deploy": "wrangler pages deploy docs/.vitepress/dist --project-name sukisu-ultra-docs",
     "cf:preview": "wrangler pages deploy docs/.vitepress/dist --project-name sukisu-ultra-docs --env preview"
   },
@@ -35,17 +33,12 @@
     "url": "https://github.com/sukisu-ultra/sukisu-ultra/issues"
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^7.0.2",
     "@types/node": "^24.2.0",
     "cli-real-favicon": "^0.0.9",
-    "glob": "^11.0.3",
     "markdown-it-mathjax3": "^4.3.2",
-    "postcss": "^8.5.6",
-    "purgecss": "^7.0.2",
     "sharp": "^0.34.3",
     "terser": "^5.43.1",
-    "vitepress": "^2.0.0-alpha.9",
-    "vue": "^3.5.18"
+    "vitepress": "^2.0.0-alpha.9"
   },
   "engines": {
     "node": ">=18.0.0"
