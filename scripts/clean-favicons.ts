@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -7,11 +5,10 @@ import { fileURLToPath } from 'url';
 const __filename: string = fileURLToPath(import.meta.url);
 const __dirname: string = path.dirname(__filename);
 
-/**
- * Cleans up unnecessary favicon files in the docs/public folder.
- */
 function cleanUpFavicons(): void {
   const publicDir: string = path.join(__dirname, '../docs/public');
+  const distDir: string = path.join(__dirname, '../docs/.vitepress/dist');
+  
   console.log('🧹 Cleaning up unnecessary favicon files...');
 
   const keepFiles: string[] = [
@@ -25,35 +22,45 @@ function cleanUpFavicons(): void {
     'og-image.png',
     'logo.svg',
     'site.webmanifest',
+    'manifest.webmanifest',
     'browserconfig.xml',
     'robots.txt',
-    'sw.js'
+    'sw.js',
+    '_headers',
+    'HarmonyOS_Sans_SC.ttf'
   ];
 
-  let removedCount = 0;
+  const cleanDirectory = (dir: string, label: string) => {
+    if (!fs.existsSync(dir)) return;
+    
+    let removedCount = 0;
+    const allFiles: string[] = fs.readdirSync(dir);
 
-  const allFiles: string[] = fs.readdirSync(publicDir);
+    console.log(`\n🧹 Cleaning ${label}...`);
 
-  allFiles.forEach((file: string) => {
-    const filePath: string = path.join(publicDir, file);
-    const stat: fs.Stats = fs.statSync(filePath);
+    allFiles.forEach((file: string) => {
+      const filePath: string = path.join(dir, file);
+      const stat: fs.Stats = fs.statSync(filePath);
 
-    if (stat.isFile()) {
-      const isFaviconFile: boolean =
-        /^(apple-touch-icon|android-chrome|mstile|favicon|safari-pinned-tab)/.test(file);
+      if (stat.isFile()) {
+        const isFaviconFile: boolean =
+          /^(apple-touch-icon|apple-touch-startup|android-chrome|mstile|favicon|safari-pinned-tab)/.test(file);
 
-      if (isFaviconFile && !keepFiles.includes(file)) {
-        console.log(`🗑️ Removing unnecessary: ${file}`);
-        fs.unlinkSync(filePath);
-        removedCount++;
-      } else if (keepFiles.includes(file)) {
-        console.log(`✅ Keeping essential: ${file}`);
+        if (isFaviconFile && !keepFiles.includes(file)) {
+          console.log(`🗑️ Removing unnecessary: ${file}`);
+          fs.unlinkSync(filePath);
+          removedCount++;
+        } else if (keepFiles.includes(file)) {
+          console.log(`✅ Keeping essential: ${file}`);
+        }
       }
-    }
-  });
+    });
 
-  console.log(`\n🎉 Cleanup complete! Removed ${removedCount} unnecessary files`);
-  console.log(`📦 Kept ${keepFiles.length} essential files for optimal performance`);
+    console.log(`📦 ${label}: Removed ${removedCount} files, kept essential files`);
+  };
+
+  cleanDirectory(publicDir, 'source directory');
+  cleanDirectory(distDir, 'dist directory');
 }
 
 cleanUpFavicons();

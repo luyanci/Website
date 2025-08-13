@@ -1,51 +1,51 @@
-#!/usr/bin/env node
 
-import realFavicon from 'cli-real-favicon';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import favicons from "favicons";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 
-const __filename: string = fileURLToPath(import.meta.url);
-const __dirname: string = path.dirname(__filename);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-/**
- * Generates favicons from master picture using cli-real-favicon.
- */
-function generateFavicons(): void {
-  console.log('⚙️ Generating favicons...');
+const source = path.join(__dirname, "../docs/public/logo.svg");
+const outputDir = path.join(__dirname, "../docs/public");
 
-  realFavicon.generateFavicon(
-    {
-      masterPicture: path.join(__dirname, '../logo.png'), // Adjust path if needed
-      dest: path.join(__dirname, '../docs/public'),
-      iconsPath: '/',
-      design: {
-        ios: {
-          pictureAspect: 'backgroundAndMargin',
-          backgroundColor: '#ffffff',
-          margin: '14%'
-        },
-        desktopBrowser: {},
-        androidChrome: {
-          pictureAspect: 'noChange',
-          themeColor: '#ffffff',
-          manifest: {
-            display: 'standalone'
-          }
-        }
-      },
-      settings: {
-        scalingAlgorithm: 'Mitchell',
-        errorOnImageTooSmall: false
-      },
-      versioning: {
-        paramName: 'v',
-        paramValue: '1.0'
-      }
-    },
-    () => {
-      console.log('✅ Favicons generated successfully!');
-    }
-  );
-}
+const configuration = {
+  path: "/",
+  appName: "SukiSU-Ultra Docs",
+  appShortName: "SukiSU-Ultra",
+  appDescription: "Next-Generation Android Root Solution Documentation",
+  developerName: "SukiSU-Ultra",
+  developerURL: "https://sukisu.org",
+  background: "#ffffff",
+  theme_color: "#ffffff",
+  display: "standalone",
+  orientation: "portrait",
+  start_url: "/",
+  version: "1.0",
+  logging: false,
+  icons: {
+    android: true,
+    appleIcon: true,
+    appleStartup: false,
+    favicons: true,
+    windows: false,
+    yandex: false
+  }
+};
 
-generateFavicons();
+favicons(source, configuration)
+  .then(response => {
+    response.images.forEach(image => {
+      fs.writeFileSync(path.join(outputDir, image.name), image.contents);
+    });
+    response.files.forEach(file => {
+      fs.writeFileSync(path.join(outputDir, file.name), file.contents);
+    });
+    fs.writeFileSync(path.join(outputDir, "favicons.html"), response.html.join("\n"));
+    console.log("✅ Favicons generated successfully!");
+  })
+  .catch(error => {
+    console.error("❌ Error generating favicons:", error);
+    process.exit(1);
+  });
