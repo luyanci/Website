@@ -39,7 +39,7 @@
     "url": "https://github.com/sukisu-ultra/sukisu-ultra/issues"
   },
   "devDependencies": {
-    "@types/node": "^24.2.1",
+    "@types/node": "^24.3.0",
     "@types/serviceworker": "^0.0.149",
     "canvas-confetti": "^1.9.3",
     "cli-real-favicon": "^0.0.9",
