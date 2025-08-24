@@ -1,5 +1,6 @@
 // .vitepress/theme/index.ts
 import DefaultTheme from 'vitepress/theme'
+import 'virtual:group-icons.css'
 import {h} from 'vue'
 import './style/style.css'
 import Confetti from './components/Confetti.vue'
