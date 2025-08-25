@@ -1,5 +1,5 @@
 // .vitepress/theme/index.ts
-import DefaultTheme from 'vitepress/theme'
+import DefaultTheme from 'vitepress/theme-without-fonts'
 import { NolebaseGitChangelogPlugin } from '@nolebase/vitepress-plugin-git-changelog/client'
 import 'virtual:group-icons.css'
 import {h} from 'vue'
