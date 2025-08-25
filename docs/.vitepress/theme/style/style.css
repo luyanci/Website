@@ -134,7 +134,6 @@ img[src='/search.png'] {
   src: url('/HarmonyOS_Sans_SC.ttf') format('truetype');
 }
 
-
 body {
   font-family: 'HarmonyOS Sans SC', sans-serif;
   line-height: 1.8;
@@ -142,7 +141,17 @@ body {
   word-spacing: 0.05em;
 }
 
-p, li, a, span, div, h1, h2, h3, h4, h5, h6 {
+p,
+li,
+a,
+span,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   word-break: break-word;
   text-justify: inter-ideograph;
   -ms-text-autospace: ideograph-alpha;
@@ -150,8 +159,8 @@ p, li, a, span, div, h1, h2, h3, h4, h5, h6 {
   -moz-osx-font-smoothing: grayscale;
 }
 
-pre, code {
+pre,
+code {
   letter-spacing: normal;
   word-spacing: normal;
 }
-

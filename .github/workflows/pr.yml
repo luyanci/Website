@@ -1,0 +1,155 @@
+name: PR Build & Notify
+on:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  notify_pr_opened:
+    name: New PR
+    if: github.event.action == 'opened'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Telegram Message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
+          message: |
+            *✨ New Pull Request Opened!*
+
+            *Repository:* `${{ github.repository }}`
+            *PR #${{ github.event.pull_request.number }}:* `${{ github.event.pull_request.title }}`
+            *Author:* `${{ github.actor }}`
+
+            *View PR:* ${{ github.event.pull_request.html_url }}
+  setup:
+    name: Setup Environment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v5.0.0
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4.1.0
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4.4.0
+        with:
+          node-version: '24'
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Upload Workspace Artifact
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: workspace
+          path: .
+  notify_build_started:
+    name: Notify Build Started
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Telegram Message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
+          message: |
+            *⏳ Build & verification process started for PR #${{ github.event.pull_request.number }}...*
+            *Commit:* `${{ github.sha }}`
+
+  check_formatting:
+    name: Check Prettier Formatting
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Workspace Artifact
+        uses: actions/download-artifact@v5
+        with:
+          name: workspace
+
+      - name: Restore PNPM Environment
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Run Prettier Check
+        run: pnpm check
+
+  build_site:
+    name: Build VitePress Site
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Workspace Artifact
+        uses: actions/download-artifact@v5
+        with:
+          name: workspace
+
+      - name: Restore PNPM Environment
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Build VitePress Site
+        run: pnpm build:all
+
+  report_status:
+    name: Report Final Status
+    needs: [check_formatting, build_site, notify_build_started]
+    if: always() # This ensures this job runs even if previous jobs fail or are cancelled.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify - Success
+        if:
+          ${{ needs.check_formatting.result == 'success' &&
+          needs.build_site.result == 'success' }}
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
+          message: |
+            *✅ Build & Verification Succeeded!*
+
+            *Repository:* `${{ github.repository }}`
+            *PR #${{ github.event.pull_request.number }}:* `${{ github.event.pull_request.title }}`
+            The VitePress site built successfully and all checks passed. Ready for review.
+
+      - name: Notify - Failure
+        if:
+          ${{ needs.check_formatting.result == 'failure' ||
+          needs.build_site.result == 'failure' }}
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
+          message: |
+            *❌ Build or Verification Failed!*
+
+            *Repository:* `${{ github.repository }}`
+            *PR #${{ github.event.pull_request.number }}:*
+            - Formatting Check: *${{ needs.check_formatting.result }}*
+            - Site Build: *${{ needs.build_site.result }}*
+
+            Please check the logs for errors.
+            *View Logs:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+      - name: Notify - Cancelled
+        if: ${{ cancelled() }}
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
+          message: |
+            * Build Cancelled.*
+
+            *Repository:* `${{ github.repository }}`
+            *PR #${{ github.event.pull_request.number }}:* The workflow was cancelled.
