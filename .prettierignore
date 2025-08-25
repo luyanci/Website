@@ -1,9 +1,0 @@
-# Dependency directories
-node_modules
-
-# VitePress build output and cache
-.vitepress/dist
-.vitepress/cache
-
-# Lockfiles
-pnpm-lock.yaml

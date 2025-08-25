@@ -20,9 +20,7 @@
     "deploy": "pnpm build:all && wrangler pages deploy docs/.vitepress/dist --project-name sukisu-ultra-docs",
     "deploy:preview": "pnpm build:all && wrangler pages deploy docs/.vitepress/dist --project-name sukisu-ultra-docs --env preview",
     "cf:deploy": "wrangler pages deploy docs/.vitepress/dist --project-name sukisu-ultra-docs",
-    "cf:preview": "wrangler pages deploy docs/.vitepress/dist --project-name sukisu-ultra-docs --env preview",
-    "format": "prettier --write .",
-    "check": "prettier --check ."
+    "cf:preview": "wrangler pages deploy docs/.vitepress/dist --project-name sukisu-ultra-docs --env preview"
   },
   "keywords": [
     "android",
@@ -51,7 +49,6 @@
     "markdown-it-mathjax3": "^4.3.2",
     "markdown-it-sub": "^2.0.0",
     "markdown-it-task-lists": "^2.1.1",
-    "prettier": "^3.6.2",
     "rfg-api": "^0.5.3",
     "sharp": "^0.34.3",
     "terser": "^5.43.1",
@@ -64,7 +61,7 @@
   "engines": {
     "node": ">=18.0.0"
   },
-  "packageManager": "pnpm@10.15.0",
+  "packageManager": "pnpm@10.14.0",
   "dependencies": {
     "@nolebase/vitepress-plugin-git-changelog": "^2.18.2",
     "vitepress-plugin-group-icons": "^1.6.3"
